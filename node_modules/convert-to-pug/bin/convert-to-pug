@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+const commandLineArgs = process.argv;
+require('../lib/cli').convertToPug(commandLineArgs.slice(2));

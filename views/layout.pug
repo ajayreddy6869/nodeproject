@@ -1,0 +1,154 @@
+doctype html
+html
+  if true
+    head
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      title GangOfFour
+      meta(content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no', name='viewport')
+      link(rel='stylesheet', href='./bootstrap/css/bootstrap.min.css')
+      link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+      link(rel='stylesheet', href='./css/theme.min.css')
+      link(rel='stylesheet', href='./css/select2.min.css')
+      link(href='/css/vis-network.min.css', rel='stylesheet', type='text/css')
+      link(rel='stylesheet', href='./css/skin-blue.min.css')
+      link(rel='stylesheet', href='./css/dataTables.bootstrap.min.css')
+      link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic')
+      link(rel='stylesheet', href='./custom-fonts/css/fontello.css')
+      link(rel='stylesheet', href='./custom-fonts1/css/fontello.css')
+      link(rel='stylesheet', href='./css/style.css')    
+  
+    body.hold-transition.skin-blue.sidebar-collapse.sidebar-mini
+      //- #loading
+      // Site wrapper
+      .wrapper
+        header.main-header
+          a.logo(href='')
+            span.logo-mini
+              b G
+              | Four
+            span.logo-lg
+              b GangOfFour
+          nav.navbar.navbar-static-top
+            a.sidebar-toggle( data-toggle='push-menu', role='button')
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            .navbar-custom-menu
+              ul.nav.navbar-nav
+                // Messages: style can be found in dropdown.less
+                li.dropdown.messages-menu
+                  a.dropdown-toggle( data-toggle='dropdown')
+                    i.fa.fa-envelope-o
+                    span.label.label-success 4
+                  ul.dropdown-menu
+                    li.header You have 4 messages
+                    li
+                      // inner menu: contains the actual data
+                      ul.menu
+                        li
+                          // start message
+                          a()
+                            .pull-left
+                              img.img-circle(src='./img/avatar5.png', alt='User Image')
+                            h4
+                              | Support Team
+                              small
+                                i.fa.fa-clock-o
+                                |  5 mins
+                            p Hi this is new version of fireliner
+                        // end message
+                    li.footer
+                      a() See All Messages
+                // Notifications: style can be found in dropdown.less
+                li.dropdown.notifications-menu
+                  a.dropdown-toggle( data-toggle='dropdown')
+                    i.fa.fa-bell-o
+                    span.label.label-warning 10
+                  ul.dropdown-menu
+                    li.header You have 10 notifications
+                    li
+                      // inner menu: contains the actual data
+                      ul.menu
+                        li
+                          a()
+                            i.fa.fa-users.text-aqua
+                            |  5 new members joined today
+                    li.footer
+                      a() View all
+                // User Account: style can be found in dropdown.less
+                li.dropdown.user.user-menu
+                  a.dropdown-toggle( data-toggle='dropdown')
+                    img.user-image(src='./img/avatar5.png', alt='User Image')
+                    span.hidden-xs anji@ca.com
+                  ul.dropdown-menu
+                    // User image
+                    li.user-header
+                      img.img-circle(src='./img/avatar5.png', alt='User Image')
+                      p
+                        | anji@ca.com
+                    // Menu Footer
+                    li.user-footer
+                      .pull-left
+                        a.btn.btn-default.btn-flat() Profile
+                      .pull-right
+                        a.btn.btn-default.btn-flat(href='/logout',) Sign out
+        // ===============================================
+        // Left side column. contains the sidebar
+        aside.main-sidebar
+          // sidebar: style can be found in sidebar.less
+          section.sidebar
+            // Sidebar user panel
+            .user-panel
+              .pull-left.image
+                img.img-circle(src='./img/avatar5.png', alt='User Image')
+              .pull-left.info
+                p anji@ca.com
+
+            ul.sidebar-menu(data-widget='tree',data-plugin='menu')
+              li.header MAIN NAVIGATION
+              li
+                a(href="/")
+                  i.fa.fa-th-large
+                  span Dashboard
+              li
+                a(href='/alerts')
+                  i.fa.fa-exclamation-triangle
+                  span Alarms
+              li
+                a(href="/changeMgmt")
+                  i.fa.fa-sliders
+                  span Change Mgmt
+              li 
+                a(href='/securitygroups')
+                  i.fa.fa-shield
+                  span Security Groups    
+        .content-wrapper#main-content
+          //- include securitygroup
+          include render
+        footer.main-footer
+          strong Crafted by
+          |  fireliner
+      // jQuery 3
+      script(src='./jquery/jquery-3.3.1.min.js')
+      script(src="./jquery/select2.full.min.js")            
+      script(src='./bootstrap/js/bootstrap.min.js')
+      script(src='./bootbox/bootbox.min.js')
+      script(src='./jquery/jquery.dataTables.min.js')
+      script(src='./jquery/dataTables.bootstrap.min.js')
+      script(type='text/javascript', src='./jquery/vis.js')
+      script(type='text/javascript', src='./scripts/liner.js')
+      //- script(type='text/javascript', src='./jquery/exampleUtil.js')
+      //- script(src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js")
+      //- script(src='./js/bootstrap-tagsinput.min.js')
+      //- script(src='./jquery/jquery-ui.min.js')      
+      script.
+        $(function () {
+          $('#example1').DataTable()
+        })
+      
+
+  else
+      include login
+

@@ -1,0 +1,26 @@
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "description": "Test Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon ./app.js",
+    "dev": "nodemon ./app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "anji",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "circular-json": "^0.5.3",
+    "cookie-parser": "^1.4.3",
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.16.3",
+    "jade": "^1.11.0",
+    "mongoose": "^5.0.13",
+    "passport": "^0.4.0",
+    "pug": "^2.0.3",
+    "underscore": "^1.9.0",
+    "uuid": "^3.2.1"
+  }
+}

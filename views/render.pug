@@ -1,0 +1,28 @@
+
+section.content
+  .row
+    .col-md-9
+      .box.box-primary
+        .box-header
+          //- i.fa.fa-database
+          h3.box-title
+          .input-group.stylish-input-group.input-group-sm.pull-right.col-md-4
+              input.form-control#searchNodes(type='text', placeholder='Search')
+              span.input-group-addon
+                button#searchNodesBtn(type='submit')
+                  span.glyphicon.glyphicon-search
+
+          .pull-right.box-tools
+        .box-body
+            #network-wrapper
+              .network-legends
+              #optionsContainer                
+              #mynetwork
+                     
+     
+
+script. 
+  var Nodes = !{JSON.stringify(Nodes)};
+  var Edges = !{JSON.stringify(Edges)};
+  console.log(Nodes)
+
